@@ -1,4 +1,4 @@
-# Chat Selfbot
+# 🗣️ Chat Selfbot
 ### ✅ Lightweight & Easy to Use
 
 [Chat](https://chat.jonazwetsloot.nl/) is a social media platform created by Jona Zwetsloot as a hobby project giving a fun experience—especially for Dutch users, though it's open to everyone.
