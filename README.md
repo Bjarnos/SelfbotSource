@@ -11,7 +11,7 @@ While Chat currently does not support official bots, and its public API is limit
 ### ✅ This Package Follows Official Rate Limits
 ### ✅ This Package Does NOT Access Unauthorized Endpoints
 
-This library **does not break Chat’s Terms of Service** in any way.  
+This library **does not break [Chat’s Terms of Service](https://chat.jonazwetsloot.nl/terms-of-service)** in any way.  
 It was developed in **direct cooperation with Chat’s creator and owner, Jona Zwetsloot**, who knows of the project and supports the initiative.
 
 Unlike unauthorized tools, this selfbot:
