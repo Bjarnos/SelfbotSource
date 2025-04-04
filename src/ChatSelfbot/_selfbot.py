@@ -78,9 +78,24 @@ def show_message(message:str=None, mtype:str="Standard"):
         show_message("Ignored show_message due to invalid mtype")
 
 allowed = list("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789")
-def username_to_id(username: str = None):
+def username_to_id(username:str=None):
     if not check_type(username, str, 1, "username", "ProfileService.username_to_id"): return
     return ''.join([char if char in allowed or char == ' ' else '' for char in username]).replace(' ', '-')
+
+def http_request(method:str=None, url:str=None, data:any=None):
+    if not check_type(method, str, 1, "method", "http_request"): return
+    if not check_type(url, str, 2, "url", "http_request"): return
+
+    if method.lower() not in ["get", "post", "put", "delete", "patch", "head", "options"]:
+        show_message(f"Invalid HTTP method for http_request: {method}", "Error")
+        return
+        
+    response
+    if data:
+        response = session[method.lower()](url, headers=headers, data=data)
+    else:
+        response = session[method.lower()](url, headers=headers)
+    return response
 
 def get_key():
     global saved_key
@@ -195,13 +210,13 @@ def get_text_from_message(message_div:Tag=None, markdown:bool=False):
             return f"> {content.strip()}\n" if markdown else content
         if name == "h1":
             content = handle_children(node)
-            return f"# {content.strip()}\n" if markdown else content
+            return f"# {content.strip()}\n" if markdown else f"{content}\n"
         if name == "h2":
             content = handle_children(node)
-            return f"## {content.strip()}\n" if markdown else content
+            return f"## {content.strip()}\n" if markdown else f"{content}\n"
         if name == "h3":
             content = handle_children(node)
-            return f"### {content.strip()}\n" if markdown else content
+            return f"### {content.strip()}\n" if markdown else f"{content}\n"
         if name == "sub":
             content = handle_children(node)
             return f"-# {content.strip()}\n" if markdown else content
@@ -425,7 +440,7 @@ class PublicMessage:
         delete(self.id)
 
     def bind_to_reply(self, func=None):
-        Core_BotService.ConnectionService.bind_to_message_reply(self.id, func)
+        BotService.ConnectionService.bind_to_message_reply(self.id, func)
 
 class DMMessage:
     def __init__(self, time, text, markdowntext, sender, id, groupname, groupid):
@@ -730,7 +745,6 @@ class ProfileService:
 
         response = session.post(f"{profile_url}/{username}", headers=headers)
         if response.status_code == 200:
-            pyperclip.copy(response.text)
             soup = BeautifulSoup(response.text, "html.parser")
             account_info_div = soup.find('div', id='account-info')
             if not account_info_div:
