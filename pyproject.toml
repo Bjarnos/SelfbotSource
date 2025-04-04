@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "ChatSelfbot"
 version = "1.0.0"
 authors = [
-  { name="Bjarnos", email="contact@bjarnos.dev" },
+    { name = "Bjarnos", email = "contact@bjarnos.dev" },
 ]
 description = "A fast and light selfbot made by Bjarnos for Chat (a program by Jona Zwetsloot)!"
 readme = "README.md"
