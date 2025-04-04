@@ -8,7 +8,7 @@ version = "1.0.0"
 authors = [
   { name="Bjarnos", email="contact@bjarnos.dev" },
 ]
-description = "A fast and light selfbot made by Bjarnos for Chat (by Jona Zwetsloot)!"
+description = "A fast and light selfbot made by Bjarnos for Chat (a program by Jona Zwetsloot)!"
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
