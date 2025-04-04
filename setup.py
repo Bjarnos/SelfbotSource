@@ -10,6 +10,10 @@ setup(
     author_email='contact@bjarnos.dev',
     url='https://github.com/Bjarnos/SelfbotSource',
     packages=find_packages(),
+    package_data={
+        'ChatSelfbot': ['images/*.png', 'images/*.webp', 'images/*.jpg', 'images/*.jpeg', 'images/*.gif'],
+    },
+    include_package_data=True,
     install_requires=[
       'requests',
       'beautifulsoup4',
