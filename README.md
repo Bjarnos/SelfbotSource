@@ -17,6 +17,9 @@ Unlike unauthorized tools, this selfbot:
 - Does not abuse rate limits
 - Fully respects Chat’s platform integrity
 
+As clearly stated in the TOS, the only rule this selfbot could break is "Don't spam. Don't write more than 10 public posts in 5 minutes.".
+A ratelimit has been added in the library to enforce this rule, if a user copies the library and removes the limit, then that's not our fault, as stated by the MIT license.
+
 ---
 
-If you’re a developer who wants to build cool stuff with Chat but found the official API too limiting—this library is for you.
+If you’re a developer who wants to build cool stuff with Chat but found the official API too limiting (and you prefer python over js)—this library is for you!
