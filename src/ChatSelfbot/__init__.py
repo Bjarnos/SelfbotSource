@@ -1,1 +1,1 @@
-from ._selfbot import BotService
+from ._selfbot import BotService, PublicMessage, DMMessage
